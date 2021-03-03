@@ -9,13 +9,14 @@ const Favorites = () => {
       collection: "notes",
       where: ["favorite", "==", true],
       orderBy: ["createdAt", "desc"],
-      storeAs:'favNotes'
+      storeAs: "favNotes",
     },
   ]);
-  const favnotes = useSelector((state) => state.firestore.ordered.favNotes);
+
+  const favnotes = useSelector((state) => state.firestore.ordered?.favNotes);
   console.log(favnotes);
 
-  return <NoteList notes={favnotes}/>;
+  return <NoteList notes={favnotes} />;
 };
 
 export default Favorites;

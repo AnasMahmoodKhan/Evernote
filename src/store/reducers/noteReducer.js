@@ -1,16 +1,15 @@
 const initialState = {
-    note_to_edit : {}
-}
+  note_to_edit: {},
+};
 
- const noteReducer = (state = initialState, { type, payload }) => {
-    switch (type) {
-
-    case 'EDIT_NOTE':
-        return payload 
+const noteReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+    case "EDIT_NOTE":
+      return payload;
 
     default:
-        return state
-    }
-}
+      return state;
+  }
+};
 
-export default noteReducer
+export default noteReducer;

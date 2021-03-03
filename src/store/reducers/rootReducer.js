@@ -6,7 +6,7 @@ import noteReducer from "./noteReducer";
 const rootReducer = combineReducers({
   firebase: firebaseReducer,
   firestore: firestoreReducer,
-  note: noteReducer
+  note: noteReducer,
 });
 
 export default rootReducer;

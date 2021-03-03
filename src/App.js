@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import  Navbar  from "./components/layout/Navbar";
+import Navbar from "./components/layout/Navbar";
 import "./App.css";
 import Home from "./components/home/Home";
 import Favorites from "./components/notes/Favorites";
@@ -12,10 +12,10 @@ function App() {
     <Router>
       <Navbar />
       <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route exact path="/favorites" component={Favorites}/>
-        <Route exact path="/note/:id" component={NotesDetail}/>
-        <Route exact path="/editform/:id" component={EditForm}/>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/favorites" component={Favorites} />
+        <Route exact path="/note/:id" component={NotesDetail} />
+        <Route exact path="/editform/:id" component={EditForm} />
       </Switch>
     </Router>
   );

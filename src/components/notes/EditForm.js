@@ -1,25 +1,25 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from "react";
+import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import {useHistory}  from 'react-router-dom';
-import useInput from '../../customhook/useInput';
+import { useHistory } from "react-router-dom";
+import useInput from "../../customhook/useInput";
 
 import { updateNote } from "../../store/actions/noteAction";
 
 const EditForm = () => {
-    const note = useSelector(state => state.note)
-    console.log('edit form',note)  
-    const [title,bindTitle,resetTitle] = useInput(note.title)
-    const [content,bindContent,resetContent] = useInput(note.content)
-    const dispatch = useDispatch()
-    const history = useHistory()
-    const handleSubmit = (e) =>{
-        e.preventDefault();
-        dispatch(updateNote({id:note.id,title,content}))
-        resetTitle()
-        resetContent()
-        history.push('/')
-    }
+  const note = useSelector((state) => state?.note);
+  console.log("edit form", note);
+  const [title, bindTitle, resetTitle] = useInput(note.title);
+  const [content, bindContent, resetContent] = useInput(note.content);
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(updateNote({ id: note.id, title, content }));
+    resetTitle();
+    resetContent();
+    history.push("/");
+  };
 
   return (
     <div className="section">
@@ -27,7 +27,12 @@ const EditForm = () => {
         <h5 className="grey-text text-darken-3">New Note</h5>
 
         <div className="input-field ">
-          <input id="note_title" type="text" className="validate" {...bindTitle}/>
+          <input
+            id="note_title"
+            type="text"
+            className="validate"
+            {...bindTitle}
+          />
           <label className="active" htmlFor="note_title">
             Note Title
           </label>
@@ -39,12 +44,14 @@ const EditForm = () => {
             className="materialize-textarea"
             {...bindContent}
           />
-          <label htmlFor="note_content" className="active">Note Content</label>
+          <label htmlFor="note_content" className="active">
+            Note Content
+          </label>
         </div>
         <button className="btn green">Update</button>
       </form>
     </div>
   );
-}
+};
 
-export default EditForm
+export default EditForm;
