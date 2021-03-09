@@ -7,8 +7,7 @@ import useInput from "../../customhook/useInput";
 import { updateNote } from "../../store/actions/noteAction";
 
 const EditForm = () => {
-  const note = useSelector((state) => state?.note);
-  console.log("edit form", note);
+  const note = useSelector((state) => (state ? state.note : null));
   const [title, bindTitle, resetTitle] = useInput(note.title);
   const [content, bindContent, resetContent] = useInput(note.content);
   const dispatch = useDispatch();

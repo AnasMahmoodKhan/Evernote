@@ -8,8 +8,9 @@ function Home() {
   useFirestoreConnect([
     { collection: "notes", orderBy: ["createdAt", "desc"] },
   ]);
-  const notes = useSelector((state) => state.firestore.ordered?.notes);
-  console.log(notes);
+  const notes = useSelector((state) =>
+    state.firestore.ordered ? state.firestore.ordered.notes : null
+  );
   return (
     <div className="container">
       <div className="row center-align">

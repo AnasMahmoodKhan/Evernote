@@ -1,6 +1,5 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-
 import { addNote } from "../../store/actions/noteAction";
 import useInput from "../../customhook/useInput";
 

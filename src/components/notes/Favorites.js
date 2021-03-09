@@ -13,9 +13,9 @@ const Favorites = () => {
     },
   ]);
 
-  const favnotes = useSelector((state) => state.firestore.ordered?.favNotes);
-  console.log(favnotes);
-
+  const favnotes = useSelector((state) =>
+    state.firestore.ordered ? state.firestore.ordered.favNotes : null
+  );
   return <NoteList notes={favnotes} />;
 };
 

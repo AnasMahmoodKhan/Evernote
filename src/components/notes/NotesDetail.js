@@ -34,7 +34,7 @@ const NotesDetail = ({ match }) => {
           <p>{note?.content}</p>
         </div>
         <div className="card-action grey lighten-4 grey-text">
-          <div>{moment(note?.createdAt.toDate()).calendar()}</div>
+          <div>{note ? moment(note.createdAt.toDate()).calendar() : null}</div>
         </div>
       </div>
     </div>

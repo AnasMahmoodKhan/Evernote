@@ -3,9 +3,13 @@ import Note from "./Note";
 
 const NoteList = ({ notes }) => (
   <div className="notelist">
-    {notes?.map((note) => (
-      <Note note={note} key={note.id} />
-    ))}
+    {notes ? (
+      notes.map((note) => <Note note={note} key={note.id} />)
+    ) : (
+      <div>
+        <h4>Notes Not Found.</h4>
+      </div>
+    )}
   </div>
 );
 
