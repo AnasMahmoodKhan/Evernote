@@ -41,15 +41,6 @@ describe("Testing Evernote", () => {
   it("renders Route link in App", () => {
     const wrapper = shallow(<App />);
     expect(wrapper.find("Route")).toBeTruthy();
-    // render(
-    //   <Provider store={store}>
-    //     <ReactReduxFirebaseProvider {...rrfProps}>
-    //       <App />
-    //     </ReactReduxFirebaseProvider>
-    //   </Provider>
-    // );
-    // const linkElement = screen.getByText("NoteBook");
-    // expect(linkElement).toBeInTheDocument();
   });
 
   it("renders a link with text of NoteBook", () => {
@@ -81,32 +72,4 @@ describe("Testing Evernote", () => {
 
     expect(wrapper.props()).toBeDefined();
   });
-
-  it("calls onSubmit prop function when form is submitted", () => {
-    const handleSubmit = jest
-      .fn()
-      
-    const wrapper = mount(
-      <Provider store={store}>
-        <ReactReduxFirebaseProvider {...rrfProps}>
-          <Form  handleSubmit={handleSubmit} />
-        </ReactReduxFirebaseProvider>
-      </Provider>
-    );
-
-    wrapper.find("form").simulate("submit");
-    expect(handleSubmit).toBeCalledTimes(1);
-  });
-
-  // test("renders new note link", () => {
-  //   render(
-  //     <Provider store={store}>
-  //       <ReactReduxFirebaseProvider {...rrfProps}>
-  //         <App />
-  //       </ReactReduxFirebaseProvider>
-  //     </Provider>
-  //   );
-  //   const linkElement = screen.getByText("New Note");
-  //   expect(linkElement).toBeInTheDocument();
-  // });
 });
